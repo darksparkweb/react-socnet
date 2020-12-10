@@ -1,0 +1,40 @@
+.userPhoto {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
+.pagesCount {
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: center;
+}
+.pagesCount span {
+    padding: 5px;
+}
+.pagesCount span:hover {
+    cursor: pointer;
+}
+.statusbar {
+    width: 100px;
+    word-break: break-all;
+}
+.userBar {
+    display: flex;
+    border: solid grey 1px ;
+    border-radius: 15px;
+    margin: 10px;
+}
+.userBar button {
+    margin-left: 30px;
+    margin-bottom: 10px;
+    background: orange;
+    border: solid black 0.5px;
+    border-radius: 5px;
+}

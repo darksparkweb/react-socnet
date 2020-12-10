@@ -1,0 +1,59 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.205);
+}
+
+.active {
+    color: gold;
+    border: none;
+}
+
+.dialog {
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.205);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(103, 184, 255, 0.575);
+}
+.dialog:hover {
+    background-color: rgba(255, 170, 59, 0.575);  
+}
+.dialog a {
+    text-decoration: none;
+    color:white;
+}
+
+.input {
+    padding:10px;
+    display: flex;
+    border-radius: 10px;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0 10px 10px 0px;
+    box-shadow: 0 0 5px rgba(138, 138, 138, 0.24);
+}
+
+.textarea {
+    font-size: 20px;
+    font-style: none;
+    background-color: antiquewhite;
+    border: solid 2px rgba(110, 110, 110, 0.322);;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0 0 5px rgba(138, 138, 138, 0.24);
+}
+
+.message {
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.205);
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(255, 126, 103, 0.479);
+    border-radius: 10px;
+}

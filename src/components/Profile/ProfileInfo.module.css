@@ -1,0 +1,39 @@
+
+.profileInfo {
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0 0 5px rgba(138, 138, 138, 0.24);
+
+}
+
+.ava {
+    width: 100px;
+    height: 100px;
+    border: solid 2px rgba(82, 82, 82, 0.219);
+    border-radius: 50%;
+    background-size: contain;
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(138, 138, 138, 0.24);
+}
+.name {
+    font-weight: bold;
+    margin-left: 10px;
+}
+.text {
+    margin-left: 10px;
+}
+
+.job {
+    width: 30px;
+}
+
+.lfj {
+    display: flex;
+    align-items: center;
+}
+
+.smicon {
+    margin-left: auto;
+    margin-right: 10px;
+}

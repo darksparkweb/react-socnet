@@ -1,0 +1,40 @@
+.friends {
+    margin-top: 10px;
+    max-width: 150px;
+    max-height: 300px;
+    background-color: rgba(255, 68, 0, 0.425);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+    font-size: 12px;
+    padding: 10px;
+
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 90px 90px 90px;
+    overflow:auto;}
+::-webkit-scrollbar {
+    height: 96%;
+   width: 8px;
+   border-radius: 50%;
+}
+/* Track */
+::-webkit-scrollbar-track {
+   background:rgba(255, 68, 0, 0);
+   padding: 10px 0;
+
+}
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+
+    border-radius: 5px; 
+    background-color: rgba(0, 132, 255, 0.425);
+
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+
+    background: rgba(36, 36, 36, 0.479);
+}
+

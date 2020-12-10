@@ -1,0 +1,19 @@
+.nav {
+    background-color: rgba(250, 99, 11, 0.678);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.24);
+    max-width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.item a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.item a.active {
+    color: yellow;
+    font-size: 18px;
+}
