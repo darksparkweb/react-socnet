@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/nasvyazi/static/css/main.92c5a4b4.chunk.css",
+    "main.js": "/nasvyazi/static/js/main.f6d31c8e.chunk.js",
+    "main.js.map": "/nasvyazi/static/js/main.f6d31c8e.chunk.js.map",
+    "runtime-main.js": "/nasvyazi/static/js/runtime-main.0b867c0f.js",
+    "runtime-main.js.map": "/nasvyazi/static/js/runtime-main.0b867c0f.js.map",
+    "static/js/2.02d4fe33.chunk.js": "/nasvyazi/static/js/2.02d4fe33.chunk.js",
+    "static/js/2.02d4fe33.chunk.js.map": "/nasvyazi/static/js/2.02d4fe33.chunk.js.map",
+    "static/css/3.e5a659c4.chunk.css": "/nasvyazi/static/css/3.e5a659c4.chunk.css",
+    "static/js/3.be41d599.chunk.js": "/nasvyazi/static/js/3.be41d599.chunk.js",
+    "static/js/3.be41d599.chunk.js.map": "/nasvyazi/static/js/3.be41d599.chunk.js.map",
+    "static/js/4.644ce723.chunk.js": "/nasvyazi/static/js/4.644ce723.chunk.js",
+    "static/js/4.644ce723.chunk.js.map": "/nasvyazi/static/js/4.644ce723.chunk.js.map",
+    "static/css/5.9902833e.chunk.css": "/nasvyazi/static/css/5.9902833e.chunk.css",
+    "static/js/5.f4e9af9f.chunk.js": "/nasvyazi/static/js/5.f4e9af9f.chunk.js",
+    "static/js/5.f4e9af9f.chunk.js.map": "/nasvyazi/static/js/5.f4e9af9f.chunk.js.map",
+    "index.html": "/nasvyazi/index.html",
+    "static/css/3.e5a659c4.chunk.css.map": "/nasvyazi/static/css/3.e5a659c4.chunk.css.map",
+    "static/css/5.9902833e.chunk.css.map": "/nasvyazi/static/css/5.9902833e.chunk.css.map",
+    "static/css/main.92c5a4b4.chunk.css.map": "/nasvyazi/static/css/main.92c5a4b4.chunk.css.map",
+    "static/js/2.02d4fe33.chunk.js.LICENSE.txt": "/nasvyazi/static/js/2.02d4fe33.chunk.js.LICENSE.txt",
+    "static/js/4.644ce723.chunk.js.LICENSE.txt": "/nasvyazi/static/js/4.644ce723.chunk.js.LICENSE.txt",
+    "static/media/lfj.53cc8269.png": "/nasvyazi/static/media/lfj.53cc8269.png",
+    "static/media/load.b767aab4.svg": "/nasvyazi/static/media/load.b767aab4.svg",
+    "static/media/logo.b7208d3f.png": "/nasvyazi/static/media/logo.b7208d3f.png",
+    "static/media/user.png": "/nasvyazi/static/media/user.a4b40bd5.png",
+    "static/media/working.5c5229ea.png": "/nasvyazi/static/media/working.5c5229ea.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0b867c0f.js",
+    "static/js/2.02d4fe33.chunk.js",
+    "static/css/main.92c5a4b4.chunk.css",
+    "static/js/main.f6d31c8e.chunk.js"
+  ]
+}
