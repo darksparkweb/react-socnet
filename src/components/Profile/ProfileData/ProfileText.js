@@ -15,8 +15,7 @@ const ProfileText = ({profile, isOwner, goToEditMode}) => {
                                             src={profile.lookingForAJob ? lfj : working}/>
                     {profile.lookingForAJob && <div>{profile.lookingForAJobDescription}</div>}
                 </div>
-                {(profile.contacts.website) &&
-                <div className={s.text}><a href={profile.contacts.website}>{profile.contacts.website}</a></div>}
+
             </div>
             <div className={s.userText}>
                 {Object.keys(profile.contacts).map(key => {

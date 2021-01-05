@@ -24,6 +24,8 @@
 .formError {
     padding: 5px;
     color: red;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .textArea {

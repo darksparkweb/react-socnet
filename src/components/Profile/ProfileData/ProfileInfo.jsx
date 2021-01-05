@@ -20,8 +20,12 @@ const ProfileInfo = ({savePhoto, isOwner, profile, status, updateStatus, savePro
     }
 
     const onSubmit = (formData) => {
-        saveProfile(formData);
-        setEditMode (false);
+        saveProfile(formData).then (
+            () => {
+                setEditMode (false)
+            }
+        )
+        //;
     }
 
     return (
@@ -39,7 +43,7 @@ const ProfileInfo = ({savePhoto, isOwner, profile, status, updateStatus, savePro
                            onChange={onMainPhotoSelected}/>}
                 </div>
                 <div className={s.userBlocks}>
-                    { editMode ? <ProfileTextFormReduxForm initialValues={profile} onSubmit={onSubmit}/> :
+                    { editMode ? <ProfileTextFormReduxForm initialValues={profile} onSubmit={onSubmit} profile={profile} /> :
                     <ProfileText goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>
                     }
                 </div>
