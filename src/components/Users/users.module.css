@@ -1,40 +1,78 @@
+.body {
+
+}
+
 .userPhoto {
     width: 100px;
     height: 100px;
-    border-radius: 15px;
+    border-radius: 50%;
     margin: 5px;
+    border: solid 2px rgba(82, 82, 82, 0.219);
+    box-shadow: 0 0 5px rgba(138, 138, 138, 0.24);
 }
 
-.selectedPage {
-    font-weight: bold;
-}
-
-.pagesCount {
-    font-size: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    vertical-align: center;
-}
-.pagesCount span {
-    padding: 5px;
-}
-.pagesCount span:hover {
-    cursor: pointer;
-}
 .statusbar {
     width: 100px;
     word-break: break-all;
 }
+.userName {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.status {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.info {
+
+}
 .userBar {
     display: flex;
-    border: solid grey 1px ;
-    border-radius: 15px;
-    margin: 10px;
-}
-.userBar button {
-    margin-left: 30px;
-    margin-bottom: 10px;
-    background: orange;
-    border: solid black 0.5px;
+    justify-content: space-between;
+    align-items: stretch;
+    border: solid lightgrey 1px;
     border-radius: 5px;
+    margin: 10px;
+    background-color: rgb(185, 250, 255);
+}
+
+.grow:nth-of-type(2) {
+    flex-grow: 4;
+}
+
+.userBar button {
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+.follow {
+    background: rgb(180, 217, 255);
+    border: none;
+    border-radius: 5px;
+    height: 100%;
+    width: 4vw;
+    font-weight: bold;
+}
+
+.unfollow {
+    background: rgb(255, 106, 37);
+    border: none;
+    border-radius: 5px;
+    height: 100%;
+    width: 4vw;
+    font-weight: bold;
+}
+
+.unfollow:hover {
+    background: rgb(180, 217, 255);
+}
+
+.follow:hover {
+    background: rgb(255, 106, 37);
+}
+
+.allBody {
+    display: flex;
 }

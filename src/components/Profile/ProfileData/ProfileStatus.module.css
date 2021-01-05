@@ -1,0 +1,31 @@
+.statusArea {
+    outline: 0;
+    padding: 5px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0 0 5px rgba(138, 138, 138, 0.24);
+
+}
+
+.status {
+    text-overflow: clip;
+    overflow-wrap: break-word;
+    word-break:break-all;
+    outline: 0;
+    font-style: italic;
+}
+
+.input {
+    font-style: italic;
+    border-style: none;
+    margin: 5.5px;
+    outline: 0;
+}
+.input:focus {
+
+    outline: 0;
+    font-size: 16px;
+}
+.statusArea:hover {
+    background-color: #61dafb;
+
+}

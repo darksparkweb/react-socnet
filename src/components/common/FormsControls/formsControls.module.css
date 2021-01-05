@@ -1,11 +1,32 @@
 .textArea {
-
     outline: none;
+    border: none;
     resize: none;
-    font-size: 20px;
-    background-color: antiquewhite;
-    border: none!important;
+    font-size: 16px;
     border-radius: 10px 0px 0px 10px;
-    box-shadow: 0 0 5px rgba(138, 138, 138, 0.24);
+    display: block;
+    width: 100%;
+}
+
+.formControl {
+    width: 100%;
+}
+
+.formControl.error input,
+.formControl.error textarea {
+    border: solid 1px red;
+}
+.formControl.error span {
+    color: red;
+    font-size: 14px;
+}
+
+.formError {
+    padding: 5px;
+    color: red;
+}
+
+.textArea {
+    height: 80px;
 
 }

@@ -1,11 +1,10 @@
 .post {
     display: flex;
     align-items: center;
-    font-size: 22px;
+    font-size: 20px;
     color: rgb(54, 54, 54);
     background-color: rgba(248, 61, 61, 0.192);
     box-shadow: 0 1px 2px 3px rgba(0, 0, 0, 0.151);
-
     border-radius: 10px;
 }
 

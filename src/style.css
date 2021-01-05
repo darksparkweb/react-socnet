@@ -6,23 +6,27 @@
 .myFirstApp {
     padding: 0;
     box-sizing: border-box;
-    width: 50%;
+    width: 50vw;
     justify-content: center;
     align-content: center;
     grid-auto-flow: column;
     display: grid;
-    grid-template-areas:
-        "h h"
-        "n c";
+    grid-template-areas: "h h" "n c";
 
-    grid-template-rows: 60px 1fr;
+    grid-template-rows: 50px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
 }
 
+@media only screen and (max-width: 1000px) {
+    .myFirstApp{
+        width: 90%;
+    }
+
+}
+
 .sidebar {
     grid-area: n;
-
 }
 
 .app-content {

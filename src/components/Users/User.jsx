@@ -2,55 +2,48 @@ import React from 'react'
 import styles from "./users.module.css";
 import userPhoto from "../../img/user.png";
 import {NavLink} from "react-router-dom";
-import Paginator from "../common/Paginator/Paginator";
 
-let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, users, ...props}) => {
-
-    return <div className={styles.body}>
-
-        <Paginator currentPage={currentPage}
-                   onPageChanged={onPageChanged}
-                   totalUsersCount={totalUsersCount}
-                   pageSize={pageSize}
-        />
-        {users.map(u => <div className={styles.userBar} key={u.id}>
-                <span>
+const User = ({user, followingInProgress, unfollow, follow}) => {
+    return (
+        <div className={styles.userBar} key={user.id}>
+                <span className={styles.grow}>
                     <div>
-                        <NavLink to={"/Profile/" + u.id}>
-                        <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.userPhoto}
-                             alt={u.name}/>
+                        <NavLink to={"/Profile/" + user.id}>
+                        <img src={user.photos.small != null ? user.photos.small : userPhoto} className={styles.userPhoto}
+                             alt={user.name}/>
                         </NavLink>
                     </div>
-                    <div>
-                        {u.followed
-                            ? <button
-                                disabled={props.followingInProgress.some(id => id === u.id)}
-                                onClick={() => {
-                                    props.unfollow(u.id)
-                                }}>Unfollow</button>
-                            : <button
-                                disabled={props.followingInProgress.some(id => id === u.id)}
-                                onClick={() => {
-                                    props.follow(u.id)
-                                }}>Follow</button>
-                        }
-                    </div>
+
                 </span>
-            <span>
+                <span className={styles.info + " " + styles.grow}>
                     <span className={styles.statusbar}>
-                        <div>{u.name}</div>
-                        <div className={styles.status}>{u.status}</div>
+                        <div className={styles.userName}>{user.name}</div>
+                        <div className={styles.status}>{user.status}</div>
                     </span>
-                    <span>
-                        <div>{"u.location.country"}</div>
-                        <div>{"u.location.city"}</div>
-                        <div></div>
-                    </span>
+                    {/*<span>*/}
+                    {/*    <div>{"a user Country"}</div>*/}
+                    {/*    <div>{"facebook link"}</div>*/}
+                    {/*    <div></div>*/}
+                    {/*</span>*/}
                 </span>
+                <div className={styles.grow}>
+                    {user.followed
+                        ? <button
+                            className={styles.unfollow}
+                            disabled={followingInProgress.some(id => id === user.id)}
+                            onClick={() => {
+                                unfollow(user.id)
+                            }}>Unfollow</button>
+                        : <button
+                            className={styles.follow}
+                            disabled={followingInProgress.some(id => id === user.id)}
+                            onClick={() => {
+                                follow(user.id)
+                            }}>Follow</button>
+                    }
+                </div>
         </div>)
-        }
-    </div>
 }
 
 
-export default Users
+export default User

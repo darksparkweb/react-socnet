@@ -1,7 +1,7 @@
 import loader from "../../img/load.svg";
 
 let Loader = (props) => {
-    return <img src={loader}/>
+    return <img alt="loader" src={loader}/>
 }
 
 

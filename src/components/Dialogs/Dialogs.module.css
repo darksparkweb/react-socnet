@@ -1,7 +1,6 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 8fr;
-    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.205);
+    grid-template-columns: 2fr 10fr;
 }
 
 .active {
@@ -25,25 +24,26 @@
 }
 
 .input {
+    justify-content: center;
     padding:10px;
     display: flex;
     border-radius: 10px;
 }
 .button {
+    cursor: pointer;
+    outline: none;
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 0 10px 10px 0px;
     box-shadow: 0 0 5px rgba(138, 138, 138, 0.24);
 }
 
 .textarea {
     font-size: 20px;
-    font-style: none;
     background-color: antiquewhite;
     border: solid 2px rgba(110, 110, 110, 0.322);;
     border-radius: 10px 0px 0px 10px;
@@ -56,4 +56,7 @@
     padding: 10px;
     background-color: rgba(255, 126, 103, 0.479);
     border-radius: 10px;
+    text-overflow: clip;
+    overflow-wrap: break-word;
+    word-break:break-all;
 }

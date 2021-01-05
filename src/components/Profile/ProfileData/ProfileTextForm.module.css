@@ -1,0 +1,42 @@
+.userInfo {
+    display: flex;
+}
+
+.userText input textarea {
+    border: solid 1px black;
+}
+
+.userText:nth-of-type(1) {
+    flex-grow: 3;
+}
+
+.name {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.text {
+    margin-left: 10px;
+
+}
+
+.text a {
+    text-decoration: none;
+    color: #4f67ff;
+}
+
+.lfj {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.button {
+    color: cornflowerblue;
+}
+
+.button button {
+    height: 100%;
+    border: none;
+    border-radius: 0 0 10px 0px
+}

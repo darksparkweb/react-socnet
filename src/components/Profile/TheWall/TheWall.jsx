@@ -1,39 +1,49 @@
 import React from "react";
 import s from "./TheWall.module.css";
 import Post from "./Post/Post";
+import {Field, reduxForm} from "redux-form";
+import {maxLength, required} from "../../../Utils/Validators/validators";
+import {Textarea} from "../../common/FormsControls/formsControls";
 
-const TheWall = (props) => {
+const maxLength10 = maxLength(10)
 
-  let TheWallElement = props.profilePage.posts.map((posts) => (<Post key={posts.id} message={posts.message} like={posts.like} dislike={posts.dislike} /> ));
-  let newPostElement = React.createRef();
-  let addPost = () => { props.addPost(); };
-  let onPostChange = () => {
+const AddPostForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit} className={s.input}>
+            <Field
+                component={Textarea}
+                validate={[required, maxLength10]}
+                name={"theWallPost"}
+                placeholder="Enter your post"
+                // cols="58"
+                rows="5"
+            />
+            <button className={s.button}>
+                Add post
+            </button>
+        </form>
+    )
+}
 
-    let text = newPostElement.current.value;
-    props.updateNewPostText(text);
+const AddPostReduxForm = reduxForm({form: 'AddPost'})(AddPostForm)
 
-  };
 
-  return (
-    <div>
-      <div className={s.lineName}>The WALL</div>
-      <div className={s.input}>
-        <textarea
-          onChange={onPostChange}
-          placeholder="Enter your post"
-          ref={newPostElement}
-          className={s.ta}
-          value={props.profilePage.newPostText}
-          cols="62"
-          rows="6"
-        />
-        <button className={s.button} onClick={addPost}>
-          Add post
-        </button>
-      </div>
-      {TheWallElement}
-    </div>
-  );
-};
+const TheWall = React.memo(props => {
+
+    let TheWallElement = props.posts.map((posts) => (
+        <Post key={posts.id} message={posts.message} like={posts.like} dislike={posts.dislike}/>));
+
+    const onSubmit = (values) => {
+        props.addPost(values.theWallPost)
+    }
+
+    return (
+        <div>
+            <div className={s.lineName}>The WALL</div>
+            <AddPostReduxForm onSubmit={onSubmit}/>
+            {TheWallElement}
+        </div>
+    );
+})
 
 export default TheWall;

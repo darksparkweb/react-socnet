@@ -1,10 +1,41 @@
 
 .profileInfo {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+
     border-radius: 0px 0px 10px 10px;
     box-shadow: 0 0 5px rgba(138, 138, 138, 0.24);
+    height: 100%;
+}
+.inputImg {
+    display: none;
+}
 
+.userBlocks:nth-of-type(2) {
+    flex-grow: 3;
+}
+.userText {
+    padding-top: 10px;
+}
+.userText input textarea {
+    border: solid 1px black;
+}
+.userText:nth-of-type(1) {
+    flex-grow: 3;
+}
+
+.userInfo {
+    display: flex;
+}
+
+.button {
+    color: cornflowerblue;
+}
+
+.button button {
+    height: 157%;
+    border: none;
+    border-radius: 0 0 10px 0px;
 }
 
 .ava {
@@ -22,8 +53,12 @@
 }
 .text {
     margin-left: 10px;
-}
 
+}
+.text a {
+    text-decoration: none;
+    color: #4f67ff;
+}
 .job {
     width: 30px;
 }
@@ -36,4 +71,8 @@
 .smicon {
     margin-left: auto;
     margin-right: 10px;
+}
+
+a:hover {
+    cursor: pointer;
 }
