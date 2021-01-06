@@ -11,22 +11,23 @@ let initialState = {
     posts: [
         {id: 1, like: 15, dislike: 1, message: "My name is Valerian"},
         {id: 2, like: 22, dislike: 2, message: "And I wanna be a front-end developer",},
-        {id: 3, like: 33, dislike: 3, message: "I'm really like it!"},
+        {id: 3, like: 33, dislike: 3, message: "I really like it!"},
         {id: 4, like: 44, dislike: 4, message: "It's really cool!"},
-        {id: 5, like: 55, dislike: 5, message: "Peace and Love"},
+        {id: 5, like: 55, dislike: 5, message: "Peace and Love"}
     ],
-    profile: null,
+    profile: null ,
     status: ""
 }
 
 const profileReducer = (state = initialState, action) => {
+
     switch (action.type) {
         case ADD_POST: {
             let newPost = {
                 id: 6,
-                message: action.theWallPost,
                 like: 0,
                 dislike: 0,
+                message: action.theWallPost
             };
             return {
                 ...state,
@@ -34,14 +35,20 @@ const profileReducer = (state = initialState, action) => {
             };
 
         }
-        case SET_USER_PROFILE: {return {...state, profile: action.profile}}
-        case SET_STATUS: {return {...state, status: action.status}}
-        case SAVE_PHOTO_SUCCESS: {return {...state, profile: {...state.profile,  photos: action.photos}}}
+        case SET_USER_PROFILE: {
+            return {...state, profile: action.profile}
+        }
+        case SET_STATUS: {
+            return {...state, status: action.status}
+        }
+        case SAVE_PHOTO_SUCCESS: {
+            return {...state, profile: {...state.profile, photos: action.photos}}
+        }
 
         default:
             return state;
     }
-}
+};
 
 export const addPostActionCreator = (theWallPost) => {
     return {

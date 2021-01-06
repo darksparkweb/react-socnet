@@ -11,6 +11,7 @@ import {
     getTotalUsersCount,
     getUsers
 } from "../../Redux/users-selectors";
+import {login} from "../../Redux/auth-reducer";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -25,6 +26,7 @@ class UsersContainer extends React.Component {
         return <>
 
             <Users
+                isAuth={this.props.isAuth}
                 totalUsersCount={this.props.totalUsersCount}
                 pageSize={this.props.pageSize}
                 currentPage={this.props.currentPage}
@@ -34,7 +36,6 @@ class UsersContainer extends React.Component {
                 unfollow={this.props.unfollow}
                 followingInProgress={this.props.followingInProgress}
                 isFetching={this.props.isFetching}
-
             />
         </>
     }
@@ -48,7 +49,8 @@ let mapStateToProps = (state) => {
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
-        followingInProgress: getFollowingInProgress(state)
+        followingInProgress: getFollowingInProgress(state),
+        isAuth: state.auth.isAuth
     }
 }
 
@@ -56,6 +58,7 @@ export default compose(
     connect(mapStateToProps,
         {
             follow, unfollow, setCurrentPage,
-            toggleFollowingProgress, getUsers: requestUsers
+            toggleFollowingProgress, getUsers: requestUsers,
+            login
         })
 )(UsersContainer)

@@ -4,7 +4,7 @@ import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
 import Loader from "../common/preloader";
 
-let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, users, ...props}) => {
+let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, isAuth, users, ...props}) => {
 
     return <div className={styles.body}>
 
@@ -17,6 +17,7 @@ let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, users, ...p
         <div>
             {users.map(u =>
                 <User user={u}
+                      isAuth={isAuth}
                       followingInProgress={props.followingInProgress}
                       follow={props.follow}
                       unfollow={props.unfollow}

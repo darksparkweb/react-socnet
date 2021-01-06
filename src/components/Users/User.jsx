@@ -3,45 +3,44 @@ import styles from "./users.module.css";
 import userPhoto from "../../img/user.png";
 import {NavLink} from "react-router-dom";
 
-const User = ({user, followingInProgress, unfollow, follow}) => {
+const User = ({user, followingInProgress, unfollow, follow, isAuth}) => {
+    debugger
     return (
         <div className={styles.userBar} key={user.id}>
                 <span className={styles.grow}>
                     <div>
                         <NavLink to={"/Profile/" + user.id}>
-                        <img src={user.photos.small != null ? user.photos.small : userPhoto} className={styles.userPhoto}
+                        <img src={user.photos.small != null ? user.photos.small : userPhoto}
+                             className={styles.userPhoto}
                              alt={user.name}/>
                         </NavLink>
                     </div>
 
                 </span>
-                <span className={styles.info + " " + styles.grow}>
+            <span className={styles.info + " " + styles.grow}>
                     <span className={styles.statusbar}>
                         <div className={styles.userName}>{user.name}</div>
                         <div className={styles.status}>{user.status}</div>
                     </span>
-                    {/*<span>*/}
-                    {/*    <div>{"a user Country"}</div>*/}
-                    {/*    <div>{"facebook link"}</div>*/}
-                    {/*    <div></div>*/}
-                    {/*</span>*/}
                 </span>
-                <div className={styles.grow}>
-                    {user.followed
-                        ? <button
-                            className={styles.unfollow}
-                            disabled={followingInProgress.some(id => id === user.id)}
-                            onClick={() => {
-                                unfollow(user.id)
-                            }}>Unfollow</button>
-                        : <button
-                            className={styles.follow}
-                            disabled={followingInProgress.some(id => id === user.id)}
-                            onClick={() => {
-                                follow(user.id)
-                            }}>Follow</button>
-                    }
-                </div>
+            {isAuth &&
+            <div className={styles.grow}>
+                {user.followed
+                    ? <button
+                        className={styles.unfollow}
+                        disabled={followingInProgress.some(id => id === user.id)}
+                        onClick={() => {
+                            unfollow(user.id)
+                        }}>Unfollow</button>
+                    : <button
+                        className={styles.follow}
+                        disabled={followingInProgress.some(id => id === user.id)}
+                        onClick={() => {
+                            follow(user.id)
+                        }}>Follow</button>
+                }
+            </div>
+            }
         </div>)
 }
 
