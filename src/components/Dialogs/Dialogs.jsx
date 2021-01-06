@@ -45,14 +45,16 @@ const Dialogs = (props) => {
         </div>
     );
 };
-const maxLength100 = maxLength(100)
+const maxLength300 = maxLength(300)
+
 const SendMessageForm = (props) => {
 
     return (
         <form onSubmit={props.handleSubmit} className={s.input}>
+            {/*<div className={s.field}>*/}
             <Field
                 component={Textarea}
-                validate={[required, maxLength100]}
+                validate={[required, maxLength300]}
                 name={"newMessageText"}
                 placeholder='enter your message here...'
                 className={s.textarea}
@@ -62,6 +64,7 @@ const SendMessageForm = (props) => {
             <button className={s.button}>
                 Send
             </button>
+            {/*</div>*/}
         </form>
     )
 }

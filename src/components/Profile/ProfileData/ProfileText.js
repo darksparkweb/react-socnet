@@ -7,7 +7,6 @@ import Contacts from "./Contacts/Contacts";
 const ProfileText = ({profile, isOwner, goToEditMode}) => {
     return (
         <div className={s.userInfo}>
-
             <div className={s.userText}>
                 <div className={s.name}>{profile.fullName}</div>
                 <div className={s.text}>{profile.aboutMe}</div>
@@ -15,11 +14,10 @@ const ProfileText = ({profile, isOwner, goToEditMode}) => {
                                             src={profile.lookingForAJob ? lfj : working}/>
                     {profile.lookingForAJob && <div>{profile.lookingForAJobDescription}</div>}
                 </div>
-
             </div>
             <div className={s.userText}>
                 {Object.keys(profile.contacts).map(key => {
-                    return <Contacts contactTitle={key} contactValue={profile.contacts[key]}/>
+                    return <Contacts key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
                 })}
             </div>
             <div className={s.button}>{isOwner && <button onClick={goToEditMode}>Edit</button>}</div>

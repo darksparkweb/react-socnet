@@ -33,7 +33,7 @@
 }
 
 .button button {
-    height: 157%;
+    height: 100%;
     border: none;
     border-radius: 0 0 10px 0px;
 }
@@ -52,8 +52,7 @@
     margin-left: 10px;
 }
 .text {
-    margin-left: 10px;
-
+    margin: 5px;
 }
 .text a {
     text-decoration: none;

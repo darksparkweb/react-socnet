@@ -11,7 +11,11 @@ const Header = (props) => {
             <div className={s.loginBlock}>
                 {props.isAuth
                     ? <div>{props.login} <button onClick={props.logout} className={s.logout}>Logout</button></div>
-                    : <NavLink to={'/login'}>Login</NavLink>}
+                    : <div>
+                        <NavLink to={'/login'}>Login</NavLink> /
+                        <a href='https://social-network.samuraijs.com/signUp' target="_blank" rel="noreferrer"> Register</a>
+
+                    </div>}
             </div>
         </header>
     );

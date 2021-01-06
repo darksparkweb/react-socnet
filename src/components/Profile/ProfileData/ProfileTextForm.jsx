@@ -27,7 +27,6 @@ const ProfileTextForm = ({handleSubmit, profile, error}) => {
                 </div>
                 }
             </div>
-
             <div className={s.button}><button>save</button></div>
         </form>
     )

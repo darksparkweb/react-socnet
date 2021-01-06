@@ -4,8 +4,10 @@ import React from "react";
 const Contacts = ({contactTitle, contactValue}) => {
     return <div>
         {(contactValue) &&
-        <div className={s.text}><a rel="noopener noreferrer" target="_blank"
-                                   href={contactValue}>{contactTitle}</a></div>}
+        <div className={s.text}>
+            <a rel="noopener noreferrer" target="_blank"
+                                   href={contactValue}>{contactTitle}</a>
+        </div>}
         {/*{(profile.contacts.vk) &&*/}
         {/*<div className={s.text}><a rel="noopener noreferrer" target="_blank"*/}
         {/*                           href={"http://" + profile.contacts.vk}><FontAwesomeIcon*/}
