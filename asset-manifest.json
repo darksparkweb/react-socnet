@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/react-socnet/static/css/main.f0fc105c.chunk.css",
-    "main.js": "/react-socnet/static/js/main.2c52e5ac.chunk.js",
-    "main.js.map": "/react-socnet/static/js/main.2c52e5ac.chunk.js.map",
-    "runtime-main.js": "/react-socnet/static/js/runtime-main.a8da9f45.js",
-    "runtime-main.js.map": "/react-socnet/static/js/runtime-main.a8da9f45.js.map",
-    "static/js/2.c7cf96d5.chunk.js": "/react-socnet/static/js/2.c7cf96d5.chunk.js",
-    "static/js/2.c7cf96d5.chunk.js.map": "/react-socnet/static/js/2.c7cf96d5.chunk.js.map",
+    "main.css": "/react-socnet/static/css/main.492687dd.chunk.css",
+    "main.js": "/react-socnet/static/js/main.2600c697.chunk.js",
+    "main.js.map": "/react-socnet/static/js/main.2600c697.chunk.js.map",
+    "runtime-main.js": "/react-socnet/static/js/runtime-main.d4a96b80.js",
+    "runtime-main.js.map": "/react-socnet/static/js/runtime-main.d4a96b80.js.map",
+    "static/js/2.d7468199.chunk.js": "/react-socnet/static/js/2.d7468199.chunk.js",
+    "static/js/2.d7468199.chunk.js.map": "/react-socnet/static/js/2.d7468199.chunk.js.map",
     "static/css/3.1df28b44.chunk.css": "/react-socnet/static/css/3.1df28b44.chunk.css",
-    "static/js/3.7d046407.chunk.js": "/react-socnet/static/js/3.7d046407.chunk.js",
-    "static/js/3.7d046407.chunk.js.map": "/react-socnet/static/js/3.7d046407.chunk.js.map",
+    "static/js/3.8b902a5f.chunk.js": "/react-socnet/static/js/3.8b902a5f.chunk.js",
+    "static/js/3.8b902a5f.chunk.js.map": "/react-socnet/static/js/3.8b902a5f.chunk.js.map",
     "static/css/4.80764f92.chunk.css": "/react-socnet/static/css/4.80764f92.chunk.css",
-    "static/js/4.5a2b5be3.chunk.js": "/react-socnet/static/js/4.5a2b5be3.chunk.js",
-    "static/js/4.5a2b5be3.chunk.js.map": "/react-socnet/static/js/4.5a2b5be3.chunk.js.map",
+    "static/js/4.31671872.chunk.js": "/react-socnet/static/js/4.31671872.chunk.js",
+    "static/js/4.31671872.chunk.js.map": "/react-socnet/static/js/4.31671872.chunk.js.map",
     "index.html": "/react-socnet/index.html",
     "static/css/3.1df28b44.chunk.css.map": "/react-socnet/static/css/3.1df28b44.chunk.css.map",
     "static/css/4.80764f92.chunk.css.map": "/react-socnet/static/css/4.80764f92.chunk.css.map",
-    "static/css/main.f0fc105c.chunk.css.map": "/react-socnet/static/css/main.f0fc105c.chunk.css.map",
-    "static/js/2.c7cf96d5.chunk.js.LICENSE.txt": "/react-socnet/static/js/2.c7cf96d5.chunk.js.LICENSE.txt",
+    "static/css/main.492687dd.chunk.css.map": "/react-socnet/static/css/main.492687dd.chunk.css.map",
+    "static/js/2.d7468199.chunk.js.LICENSE.txt": "/react-socnet/static/js/2.d7468199.chunk.js.LICENSE.txt",
     "static/media/lfj.53cc8269.png": "/react-socnet/static/media/lfj.53cc8269.png",
     "static/media/load.b767aab4.svg": "/react-socnet/static/media/load.b767aab4.svg",
     "static/media/logo.b7208d3f.png": "/react-socnet/static/media/logo.b7208d3f.png",
@@ -25,9 +25,9 @@
     "static/media/working.5c5229ea.png": "/react-socnet/static/media/working.5c5229ea.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a8da9f45.js",
-    "static/js/2.c7cf96d5.chunk.js",
-    "static/css/main.f0fc105c.chunk.css",
-    "static/js/main.2c52e5ac.chunk.js"
+    "static/js/runtime-main.d4a96b80.js",
+    "static/js/2.d7468199.chunk.js",
+    "static/css/main.492687dd.chunk.css",
+    "static/js/main.2600c697.chunk.js"
   ]
 }
