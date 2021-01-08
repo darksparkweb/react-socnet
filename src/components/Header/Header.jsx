@@ -10,10 +10,15 @@ const Header = (props) => {
             <div className={s.title}>Насвязи.com</div>
             <div className={s.loginBlock}>
                 {props.isAuth
-                    ? <div>{props.login} <button onClick={props.logout} className={s.logout}>Logout</button></div>
+                    ? <div className={s.log}>
+                        <img className={s.ava} src={"https://social-network.samuraijs.com/activecontent/images/users/" + props.id + "/user.jpg?v=6"} alt={props.login}/>
+                        <span>{props.login}</span>
+                        <button onClick={props.logout} className={s.logout}>Logout</button>
+                      </div>
                     : <div>
                         <NavLink to={'/login'}>Login</NavLink> /
-                        <a href='https://social-network.samuraijs.com/signUp' target="_blank" rel="noreferrer"> Register</a>
+                        <a href='https://social-network.samuraijs.com/signUp' target="_blank"
+                           rel="noreferrer"> Register</a>
 
                     </div>}
             </div>

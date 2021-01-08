@@ -32,6 +32,15 @@ export const usersAPI = {
         return profileAPI.getProfile(userID)
     }
 }
+
+export const friendsAPI = {
+    getFriends(currentPage = 1, pageSize = 50) {
+        return instance.get(`users?page=${currentPage}&count=${pageSize}&friend=true`)
+            .then(response => {
+                return response.data
+            })
+    },
+}
 export const profileAPI = {
     getProfile(userID) {
         return instance.get(`profile/` + userID)

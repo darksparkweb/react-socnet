@@ -4,7 +4,6 @@ import userPhoto from "../../img/user.png";
 import {NavLink} from "react-router-dom";
 
 const User = ({user, followingInProgress, unfollow, follow, isAuth}) => {
-    debugger
     return (
         <div className={styles.userBar} key={user.id}>
                 <span className={styles.grow}>

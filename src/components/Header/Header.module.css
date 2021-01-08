@@ -1,10 +1,12 @@
 .header {
+
     border-radius: 0px 0px 10px 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.24);
     grid-area: h;
     background-color: #0d6e00a4;
     display: flex;
     align-items: center;
+    vertical-align: center;
 }
 
 .title {
@@ -17,9 +19,16 @@
     width: 45px;
 
 }
-
+.log {
+    display: inline-flex;
+}
+.log span {
+    margin-right: 5px;
+}
 .loginBlock {
-    display: block; /* смещает только блоки */
+    vertical-align: middle;
+    line-height: 30px;
+    display: inline-flex; /* смещает только блоки */
     margin-left: auto;
     margin-right: 15px;
     color: white;
@@ -44,5 +53,8 @@
 }
 
 .ava {
-    width: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    margin-right: 5px;
 }

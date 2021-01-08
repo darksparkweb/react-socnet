@@ -8,6 +8,7 @@ import {Textarea} from "../../common/FormsControls/formsControls";
 const maxLength10 = maxLength(100)
 
 const AddPostForm = (props) => {
+
     return (
         <form onSubmit={props.handleSubmit} className={s.input}>
             <Field
@@ -15,7 +16,6 @@ const AddPostForm = (props) => {
                 validate={[required, maxLength10]}
                 name={"theWallPost"}
                 placeholder="Enter your post"
-                // cols="58"
                 rows="5"
             />
             <button className={s.button}>
@@ -28,10 +28,9 @@ const AddPostForm = (props) => {
 const AddPostReduxForm = reduxForm({form: 'AddPost'})(AddPostForm)
 
 
-const TheWall = React.memo(props => {
-
+const TheWall = React.memo((props) => {
     let TheWallElement = props.posts.map((posts) => (
-        <Post key={posts.id} message={posts.message} like={posts.like} dislike={posts.dislike}/>));
+        <Post userID={posts.userID} key={posts.id} message={posts.message} like={posts.like} dislike={posts.dislike}/>));
 
     const onSubmit = (values) => {
         props.addPost(values.theWallPost)
@@ -40,6 +39,7 @@ const TheWall = React.memo(props => {
     return (
         <div>
             <div className={s.lineName}>The WALL</div>
+
             <AddPostReduxForm onSubmit={onSubmit}/>
             {TheWallElement}
         </div>

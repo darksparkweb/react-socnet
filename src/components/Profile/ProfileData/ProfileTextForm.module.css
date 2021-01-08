@@ -40,3 +40,7 @@
     border: none;
     border-radius: 0 0 10px 0px
 }
+
+.button button:hover {
+    background-color: lightblue;
+}

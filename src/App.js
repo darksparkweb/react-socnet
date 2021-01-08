@@ -16,6 +16,7 @@ import {compose} from "redux";
 import {initializeApp} from "./Redux/app-reducer";
 import Loader from "./components/common/preloader";
 import {withSuspense} from "./Hoc/WithSuspense";
+import Footer from "./components/Footer/Footer";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
@@ -31,7 +32,7 @@ class App extends React.Component {
 
     render() {
         if (!this.props.initialized) {
-            return <Loader/>
+            return <div className="loader"><Loader/></div>
         }
         return (
 
@@ -62,6 +63,7 @@ class App extends React.Component {
                                 render={() => <Login/>}/>
                         </Switch>
                     </div>
+                    <Footer />
                 </div>
             </div>
 

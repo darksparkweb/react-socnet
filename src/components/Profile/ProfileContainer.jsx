@@ -31,12 +31,13 @@ class ProfileContainer extends React.Component {
 
     render() {
         return (
-            <Profile {...this.props}
+            <Profile
                      isOwner={!this.props.match.params.userID}
                      profile={this.props.profile}
                      status={this.props.status}
                      updateStatus={this.props.updateStatus}
                      savePhoto={this.props.savePhoto}
+                     saveProfile={this.props.saveProfile}
             />
         );
     }

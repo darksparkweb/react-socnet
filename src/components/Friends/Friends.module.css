@@ -1,5 +1,5 @@
 .friends {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 5px;
     max-width: 150px;
     max-height: 300px;
@@ -8,7 +8,6 @@
     border-radius: 10px;
     font-size: 12px;
     padding: 10px;
-
     text-align: center;
     display: grid;
     grid-template-columns: auto auto;
@@ -39,3 +38,7 @@
     background: rgba(36, 36, 36, 0.479);
 }
 
+.title {
+    position: absolute;
+    transform: translate(40px, -42px);
+}

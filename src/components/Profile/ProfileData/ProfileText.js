@@ -12,7 +12,7 @@ const ProfileText = ({profile, isOwner, goToEditMode}) => {
                 <div className={s.text}>{profile.aboutMe}</div>
                 <div className={s.lfj}><img alt={profile.userId} className={s.job}
                                             src={profile.lookingForAJob ? lfj : working}/>
-                    {profile.lookingForAJob && <div>{profile.lookingForAJobDescription}</div>}
+                    {profile.lookingForAJob ? <div>{profile.lookingForAJobDescription}</div> : <div>Already Working</div>}
                 </div>
             </div>
             <div className={s.userText}>

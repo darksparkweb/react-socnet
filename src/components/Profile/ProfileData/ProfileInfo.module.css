@@ -31,6 +31,9 @@
 .button {
     color: cornflowerblue;
 }
+.button button:hover {
+    background-color: lightblue;
+}
 
 .button button {
     height: 100%;
@@ -59,7 +62,8 @@
     color: #4f67ff;
 }
 .job {
-    width: 30px;
+    width: 70px;
+    margin-right: 5px;
 }
 
 .lfj {

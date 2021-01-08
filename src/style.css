@@ -2,18 +2,26 @@
     display: flex;
     justify-content: center;
 }
-
+.loader {
+    position: absolute;
+    align-items: center;
+    top: 40%;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
 .myFirstApp {
     padding: 0;
     box-sizing: border-box;
     width: 50vw;
+    min-height: 100vh;
     justify-content: center;
     align-content: center;
     grid-auto-flow: column;
     display: grid;
-    grid-template-areas: "h h" "n c";
+    grid-template-areas: "h h" "n c" "f f";
 
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: 50px 1fr 50px;
     grid-template-columns: 2fr 10fr;
     grid-gap: 10px;
 }
