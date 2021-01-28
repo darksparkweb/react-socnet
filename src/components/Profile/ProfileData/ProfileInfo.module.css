@@ -31,6 +31,7 @@
 .button {
     color: cornflowerblue;
 }
+
 .button button:hover {
     background-color: lightblue;
 }
@@ -39,6 +40,9 @@
     height: 100%;
     border: none;
     border-radius: 0 0 10px 0px;
+}
+.button button:focus {
+    outline: none;
 }
 
 .ava {

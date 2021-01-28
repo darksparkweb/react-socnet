@@ -29,13 +29,16 @@ const AddPostReduxForm = reduxForm({form: 'AddPost'})(AddPostForm)
 
 
 const TheWall = React.memo((props) => {
+    const deletePost = (id) => {
+        props.deletePost(id)
+    }
+
     let TheWallElement = props.posts.map((posts) => (
-        <Post userID={posts.userID} key={posts.id} message={posts.message} like={posts.like} dislike={posts.dislike}/>));
+        <Post likePost={props.addLike} deletePost={deletePost} userID={posts.userID} key={posts.id} id={posts.id} message={posts.message} like={posts.like} dislike={posts.dislike}/>));
 
     const onSubmit = (values) => {
         props.addPost(values.theWallPost)
     }
-
     return (
         <div>
             <div className={s.lineName}>The WALL</div>

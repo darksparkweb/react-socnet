@@ -1,10 +1,24 @@
-import React from 'react'
+import React, {FC} from 'react'
 import styles from "./users.module.css";
 import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
 import Loader from "../common/preloader";
+import {UserType} from "../../types/types";
 
-let Users = ({currentPage, onPageChanged, totalUsersCount, pageSize, isAuth, users, ...props}) => {
+type PropsType = {
+    totalUsersCount: number
+    pageSize: number
+    currentPage: number
+    onPageChanged: (pageNumber: number) => void
+    users: Array<UserType>
+    isAuth: boolean
+    followingInProgress: Array<number>
+    unfollow: (userID:number) => void
+    follow: (userID:number) => void
+    isFetching: boolean
+}
+
+let Users: FC<PropsType> = ({currentPage, onPageChanged, totalUsersCount, pageSize, isAuth, users, ...props}) => {
 
     return <div className={styles.body}>
 

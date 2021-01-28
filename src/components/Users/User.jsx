@@ -3,6 +3,8 @@ import styles from "./users.module.css";
 import userPhoto from "../../img/user.png";
 import {NavLink} from "react-router-dom";
 
+
+
 const User = ({user, followingInProgress, unfollow, follow, isAuth}) => {
     return (
         <div className={styles.userBar} key={user.id}>

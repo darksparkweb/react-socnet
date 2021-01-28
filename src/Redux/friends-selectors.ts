@@ -1,20 +1,22 @@
-export const getFriends = (state) => {
+import {AppStateType} from "./redux-store";
+
+export const getFriends = (state: AppStateType) => {
     return state.friendsPage.friends
 }
 
-export const getPageSize = (state) => {
+export const getPageSize = (state: AppStateType) => {
     return state.friendsPage.pageSize
 }
 
-export const getTotalFriendsCount = (state) => {
+export const getTotalFriendsCount = (state: AppStateType) => {
     return state.friendsPage.totalUsersCount
 }
 
-export const getCurrentPage = (state) => {
+export const getCurrentPage = (state: AppStateType) => {
     return state.friendsPage.currentPage
 }
 
-export const getIsFetching = (state) => {
+export const getIsFetching = (state: AppStateType) => {
     return state.friendsPage.isFetching
 }
 
