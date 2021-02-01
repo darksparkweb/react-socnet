@@ -3,7 +3,7 @@ export type PostType = {
     message: string
     like: number
     dislike: number
-    userID: number
+    userID: number | null
 }
 export type ProfileType = {
     userId: number
@@ -12,6 +12,7 @@ export type ProfileType = {
     fullName: string
     contacts: ContactsType
     photos: PhotosType
+    aboutMe: string
 }
 export type ContactsType = {
     github: string
@@ -39,3 +40,4 @@ export type ToggleIsFetchingType = {
     type: "TOGGLE_IS_FETCHING"
     isFetching: boolean
 }
+
