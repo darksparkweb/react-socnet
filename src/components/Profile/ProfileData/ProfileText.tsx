@@ -22,7 +22,7 @@ const ProfileText: React.FC<ProfileTextType> = ({profile, isOwner, goToEditMode}
                     {profile.lookingForAJob ? <div>{profile.lookingForAJobDescription}</div> : <div>Already Working</div>}
                 </div>
             </div>
-            <div className={s.userText}>
+            <div style={{display: 'flex'}}>
                 {Object.keys(profile.contacts).map(key => {
                     return <Contacts key={key} contactTitle={key} contactValue={profile.contacts[key as keyof ContactsType]}/>
                 })}

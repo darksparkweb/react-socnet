@@ -46,6 +46,7 @@
 }
 
 .ava {
+    cursor: pointer;
     width: 100px;
     height: 100px;
     border: solid 2px rgba(82, 82, 82, 0.219);

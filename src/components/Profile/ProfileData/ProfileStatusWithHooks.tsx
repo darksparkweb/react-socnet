@@ -1,7 +1,10 @@
 import React, {ChangeEvent, useEffect, useState} from 'react'
 import s from "./ProfileStatus.module.css";
+import { Typography,  } from 'antd';
+import { Input } from 'antd';
+import {PlayCircleOutlined} from '@ant-design/icons'
 
-
+const { Text } = Typography;
 type PropsType = {
     status: string
     updateStatus: (status: string) => void
@@ -35,26 +38,27 @@ const ProfileStatusWithHooks: React.FC<PropsType> = (props) => {
     }
 
 
+
     return (
         <div>
             {!editMode &&
             <div className={s.statusArea}>
-                <span onClick={activateEditMode} className={s.status}>{props.status || "Enter your status here"}</span>
+                {/*@ts-ignore*/}
+                <PlayCircleOutlined style={{marginRight: 3}}/><Text mark onClick={activateEditMode} className={s.status}>{props.status || "Enter your status here"}</Text>
             </div>
             }
             {editMode &&
             <div>
-                <input
-                    // @ts-ignore
-                    size={"70"}
-                    placeholder={"Enter your status here"}
-                    type={"text"}
+                <Input
+                    className={s.statusArea}
+                    size="small"
+                    placeholder="Enter your status here"
+                    prefix={<PlayCircleOutlined />}
                     onChange={onStatusChange}
                     onBlur={deactivateEditMode}
-                    className={s.input}
                     autoFocus={true}
-                    value={status}>
-                </input>
+                    value={status}
+                />
             </div>
             }
         </div>

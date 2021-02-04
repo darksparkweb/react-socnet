@@ -1,4 +1,6 @@
 .body {
+    display: flex;
+    justify-content: center;
 
 }
 
@@ -16,13 +18,15 @@
     word-break: break-all;
 }
 .userName {
-    font-size: 16px;
+    font-size: 18px;
     font-style: italic;
 }
 
 .status {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
+    white-space: normal;
+    height: auto;
 }
 
 .info {
@@ -46,23 +50,27 @@
     word-wrap: break-word;
     cursor: pointer;
 }
-
+.card button {
+    transition: all 200ms;
+}
 .follow {
     background: rgb(180, 217, 255);
     border: none;
     border-radius: 5px;
-    height: 100%;
-    width: 4vw;
-    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    margin-left: 20px;
 }
 
 .unfollow {
     background: rgb(255, 106, 37);
     border: none;
-    border-radius: 5px;
-    height: 100%;
-    width: 4vw;
-    font-weight: bold;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    margin-left: 20px;
 }
 
 .unfollow:hover {

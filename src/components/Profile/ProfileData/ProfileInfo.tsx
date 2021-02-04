@@ -1,11 +1,12 @@
 import React, {ChangeEvent, useState} from 'react'
-import s from "./ProfileInfo.module.css";
-import Loader from "../../common/preloader";
-import userPhoto from "../../../img/user.png";
-import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
-import ProfileText from "./ProfileText";
-import ProfileTextFormReduxForm from "./ProfileTextForm";
-import {ProfileType} from "../../../types/types";
+import s from './ProfileInfo.module.css'
+import userPhoto from '../../../img/user.png'
+import ProfileStatusWithHooks from './ProfileStatusWithHooks'
+import ProfileText from './ProfileText'
+import ProfileTextFormReduxForm from './ProfileTextForm'
+import {ProfileType} from '../../../types/types'
+import {LoadingOutlined} from '@ant-design/icons'
+import {Tooltip} from 'antd'
 
 type PropsType = {
     profile: ProfileType | null
@@ -20,7 +21,7 @@ const ProfileInfo: React.FC<PropsType> = ({savePhoto, isOwner, profile, status, 
     let [editMode, setEditMode] = useState(false)
 
     if (!profile) {
-        return <Loader/>
+        return <LoadingOutlined style={{fontSize: 58, display: "flex", justifyContent: "center", alignItems: "center", margin: ' 35vh auto'}}/>
     }
 
     const onMainPhotoSelected = (e: ChangeEvent<HTMLInputElement>) => {
@@ -43,11 +44,12 @@ const ProfileInfo: React.FC<PropsType> = ({savePhoto, isOwner, profile, status, 
             <ProfileStatusWithHooks status={status} updateStatus={updateStatus} isOwner={isOwner}/>
             <div className={s.profileInfo}>
                 <div className={s.userBlocks}>
-                    <label htmlFor="file"><img
+                    <label htmlFor="file"><Tooltip placement="bottomLeft" title={'Click to change photo'}>
+                    <img
                         alt={profile.fullName}
                         src={profile.photos.large != null ? profile.photos.large : userPhoto}
                         className={s.ava}
-                    /></label>
+                    /></Tooltip></label>
                     {isOwner &&
                     <input type={"file"} accept="image/png, .jpeg, .jpg, image/gif" id={"file"} className={s.inputImg}
                            onChange={onMainPhotoSelected}/>}

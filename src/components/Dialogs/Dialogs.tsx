@@ -1,9 +1,9 @@
-import React from "react";
-import s from "./Dialogs.module.css";
-import {InitialStateType} from "../../Redux/dialogsReducer";
-import {Message} from "./Message";
-import {DialogItem} from "./DialogItem";
-import {SendMessageRedux} from "./SendMessageForm";
+import React from 'react'
+import s from './Dialogs.module.css'
+import {InitialStateType} from '../../Redux/dialogsReducer'
+import {Message} from './Message'
+import {DialogItem} from './DialogItem'
+import {SendMessageForm} from './SendMessageForm'
 
 export type PropsType = {
     dialogsPage: InitialStateType
@@ -33,7 +33,7 @@ const Dialogs: React.FC<PropsType> = (props) => {
             <div>{dialogsElements}</div>
             <div>
                 {messagesElements}
-                <SendMessageRedux onSubmit={sendMessage}/>
+                <SendMessageForm onSubmit={sendMessage}/>
             </div>
         </div>
     );

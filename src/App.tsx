@@ -2,26 +2,29 @@ import React, {ComponentType} from 'react'
 import store, {AppStateType} from './Redux/redux-store'
 import {BrowserRouter, Redirect, Route, Switch, withRouter} from 'react-router-dom'
 import {connect, Provider} from 'react-redux'
-import Navbar from './components/Navbar/Navbar'
 import News from './components/News/News'
 import Music from './components/Music/Music'
 import Settings from './components/Settings/Settings'
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {far} from '@fortawesome/free-regular-svg-icons'
+import 'antd/dist/antd.css'
 import './style.css'
-import HeaderContainer from './components/Header/HeaderContainer'
 import {LoginPage} from './components/Login/loginPage'
 import {compose} from 'redux'
 import {initializeApp} from './Redux/app-reducer'
 import Loader from './components/common/preloader'
 import {withSuspense} from './Hoc/WithSuspense'
 import {Users} from './components/Users/Users'
+import Layout from 'antd/lib/layout'
+import {AppHeader} from './components/Header/Header'
 
+const {Content, Footer} = Layout
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
+const ChatPage = React.lazy(() => import('./pages/Chat/ChatPage'))
 
-library.add(far);
+library.add(far)
 
 type StatePropsType = ReturnType<typeof mapStateToProps>
 type DispatchPropsType = {
@@ -29,37 +32,34 @@ type DispatchPropsType = {
 }
 const SuspendedDialogs = withSuspense(DialogsContainer)
 const SuspendedProfile = withSuspense(ProfileContainer)
+const SuspendedChat = withSuspense(ChatPage)
 
 class App extends React.Component<StatePropsType & DispatchPropsType> {
     catchAllUnhandledErrors = (e: PromiseRejectionEvent) => {
-        alert("Some error occured")
+        alert('Some error occurred')
     }
 
     componentDidMount() {
         this.props.initializeApp()
-        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors)
+        window.addEventListener('unhandledrejection', this.catchAllUnhandledErrors)
     }
 
     componentWillUnmount() {
-        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
+        window.removeEventListener('unhandledrejection', this.catchAllUnhandledErrors)
     }
 
     render() {
         if (!this.props.initialized) {
-            return <div className="loader"><Loader/></div>
+            return <Loader/>
         }
         return (
-
-            <div className="sectionOne">
-                <div className="myFirstApp">
-                    <HeaderContainer/>
-                    <div className="sidebar">
-                        <Navbar/>
-                    </div>
-                    <div className="app-content">
+            <Layout className="layout">
+                <AppHeader/>
+                <Content style={{padding: '0 50px', height: '100%'}}>
+                    <div className="site-layout-content">
                         <Switch>
                             <Route exact path="/"
-                                   render={() => <Redirect to={"/profile"}/>}/>
+                                   render={() => <Redirect to={'/profile'}/>}/>
                             <Route path="/dialogs"
                                    render={() => <SuspendedDialogs/>}/>
                             <Route path="/profile/:userID?"
@@ -74,13 +74,15 @@ class App extends React.Component<StatePropsType & DispatchPropsType> {
                                    render={() => <Settings/>}/>
                             <Route path="/login"
                                    render={() => <LoginPage/>}/>
+                            <Route path="/chat"
+                                   render={() => <SuspendedChat/>}/>
                             <Route path="*"
                                    render={() => <div>404 NOT FOUND</div>}/>
                         </Switch>
                     </div>
-                </div>
-            </div>
-
+                </Content>
+                <Footer style={{textAlign: 'center'}}>FriendHook ©2021 Created by Onium Web</Footer>
+            </Layout>
         )
     }
 }
@@ -90,7 +92,7 @@ const mapStateToProps = (state: AppStateType) => ({
 })
 let AppContainer = compose<ComponentType>(
     withRouter,
-    connect(mapStateToProps, {initializeApp}))(App);
+    connect(mapStateToProps, {initializeApp}))(App)
 
 const SocNetApp: React.FC = () => {
     return <BrowserRouter>

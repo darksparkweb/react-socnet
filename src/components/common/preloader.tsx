@@ -1,9 +1,8 @@
-import loader from "../../img/load.svg";
-import s from './preloader.module.css'
-import React from "react";
+import React from 'react'
+import {LoadingOutlined} from '@ant-design/icons'
 
 let Loader: React.FC = (props) => {
-    return <div className={s.loader}><img alt="loader" src={loader}/></div>
+    return <LoadingOutlined style={{fontSize: 58, display: "flex", justifyContent: "center", alignItems: "center", margin: ' 35vh auto'}}/>
 }
 
 

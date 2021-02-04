@@ -1,23 +1,38 @@
-import {maxLength, required} from "../../Utils/Validators/validators";
-import s from "./Dialogs.module.css";
-import {InjectedFormProps, reduxForm} from "redux-form";
-import {createField, Textarea} from "../common/FormsControls/formsControls";
-import React from "react";
-import {NewMessageFormValuesType} from "./Dialogs";
+import React from 'react'
+import {Form, Input, SubmitButton} from 'formik-antd'
+import {Formik} from 'formik'
 
-const maxLength300 = maxLength(300)
-type NewMessageFormKeysType = Extract<keyof NewMessageFormValuesType, string>
-type PropsType = {}
+// const maxLength300 = maxLength(300)
+type PropsType = {
+    onSubmit: (values: any) => void
+}
 
-export const SendMessageForm: React.FC<InjectedFormProps<NewMessageFormValuesType, PropsType> & PropsType> = (props) => {
+export const SendMessageForm: React.FC<PropsType> = (props) => {
+    const submit: any = (values: any, actions:any) => {
+        props.onSubmit(values)
+        actions.setSubmitting(false)
+        actions.resetForm({values: ''})
+    }
     return (
-        <form onSubmit={props.handleSubmit} className={s.input}>
-            {createField<NewMessageFormKeysType>('enter your message here...', "newMessageText", [required, maxLength300], Textarea, "")}
+        <Formik
+            onSubmit={submit}
+            initialValues={{ newMessageText: '' }}>
+            {({isSubmitting}) => (
+                <Form style={{display: 'flex'}}>
+                    <Input.TextArea rows={4} name='newMessageText' placeholder='Message' style={{background: 'none', resize: 'none', marginBottom: 10}}/>
+                    <SubmitButton disabled={isSubmitting} style={{height: 98,  wordWrap: 'break-word'}}>
+                        Send Message
+                    </SubmitButton>
+                </Form>
+            )}
+        </Formik>
 
-            <button className={s.button}>
-                Send
-            </button>
-        </form>
+        // <form onSubmit={props.handleSubmit} className={s.input}>
+        //     {createField<NewMessageFormKeysType>('enter your message here...', "newMessageText", [required, maxLength300], Textarea, "")}
+        //
+        //     <button className={s.button}>
+        //         Send
+        //     </button>
+        // </form>
     )
 }
-export const SendMessageRedux = reduxForm<NewMessageFormValuesType>({form: 'SendMessage'})(SendMessageForm)

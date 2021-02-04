@@ -47,6 +47,9 @@ const usersReducer = (state = initialState, action: ActionsType): InitialStateTy
         case 'SN/users/SET_CURRENT_PAGE': {
             return {...state, currentPage: action.currentPage}
         }
+        case 'SN/users/SET_PAGE_SIZE': {
+            return {...state, pageSize: action.pageSize}
+        }
         case 'SN/users/SET_TOTAL_USERS_COUNT': {
             return {...state, totalUsersCount: action.count}
         }
@@ -75,6 +78,7 @@ export const actions = {
     unfollowSuccess: (userID: number) => ({type: 'SN/users/UNFOLLOW', userID} as const),
     setUsers: (users: Array<UserType>) => ({type: 'SN/users/SET_USERS', users} as const),
     setCurrentPage: (currentPage: number) => ({type: 'SN/users/SET_CURRENT_PAGE', currentPage} as const),
+    setPageSize: (pageSize: number) => ({type: 'SN/users/SET_PAGE_SIZE', pageSize} as const),
     setTotalUsersCount: (count: number) => ({type: 'SN/users/SET_TOTAL_USERS_COUNT', count} as const),
     setFilter: (filter: FilterType) => ({type: "SN/users/SET_FILTER", payload: filter} as const),
     toggleIsFetching: (isFetching: boolean) => ({type: 'SN/users/TOGGLE_IS_FETCHING', isFetching} as const),
@@ -90,6 +94,7 @@ export const actions = {
 export const requestUsers = (page: number, pageSize: number, filter: FilterType): ThunkType => {
     return async (dispatch) => {
         dispatch(actions.toggleIsFetching(true))
+        dispatch(actions.setPageSize(pageSize))
         dispatch(actions.setCurrentPage(page))
         dispatch(actions.setFilter(filter))
 
